@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var a=[10,1,2,5,4,7,8,9,6];
+
+        document.writeln("<h1>Sorteando uma Array.</h1>");
+        
+        outputArray("Apresentação dos itens na seguinte ordem (original):",a);
+
+        a.sort(compareIntegers);// classificação de arrays:
+        // a: Array;
+        // sort: método incorporado de itens;
+        outputArray("Itens em ordem ascedente: ",a);// output refeito após a mudança do sort();
+
+        function outputArray(heading,theArray){// função que cria a impressão;
+            document.writeln("<p>"+heading+theArray.join(", ")+"</p>");
+        }
+        function compareIntegers(value1,value2){// parametro para o método sort;
+            return parseInt(value1)-parseInt(value2);
+            // value1>value2: os elementos trocam de lugar;
+            // value1=value2 && value1<value2: os elementos não trocam de lugar;  
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html> 

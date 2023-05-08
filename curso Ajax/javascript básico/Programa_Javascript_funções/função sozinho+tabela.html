@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função sozinho+tabela.</title>
+    <style>
+        table{
+            width: 15em;
+            border: 1px solid gray;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        var imput1=window.prompt("Digite o primeiro número:");
+        var imput2=window.prompt("Digite o segundo número:");
+        var imput3=window.prompt("Digite o terceiro número:");
+
+        x=parseFloat(imput1);
+        y=parseFloat(imput2);
+        z=parseFloat(imput3);
+
+        function equação(x,y,z) {
+            return (x*y)/z;
+        }
+        document.writeln(equação(x,y,z));
+
+        //agora, a tabela:
+        var nums=new Array(x,y,z);
+        output("A primeira tabela é:", nums)
+        function output(heading, theArray){
+            document.writeln("<h2>"+heading+"</h2>");
+            document.writeln("<table><thead><th>Ordem</th>","<th>Array</th></thead>");
+
+                for(var i=0; i<nums.length; i++) 
+                
+                document.writeln("<tbody><tr><td>"+i+"</td>","<td>"+nums[i]+"</td></tr>");
+                document.writeln("</tbody></table>");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

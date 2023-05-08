@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // introdução da array com todas as instruções necessárias para a construção do site;
+        var helpArray=[
+            "Enter your name in this input box.",
+            "Enter your e-mail adress in this input box",
+            "in the format user@domain.",
+            "Check this box if you liked our site.",
+            "In this box, enter any comments you would",
+            "like us to read.",
+            "Preencha todos os itens apresentados no formulário, por favor."
+        ]
+
+        function helpText(i){
+            // instrução;
+            document.getElementById("tip").innerHTML=helpArray[i];
+            /*
+                document = objeto 'documento;'
+                getElementById("tip") = gerador de endereço com parametro 'tip';            
+                innerHTML = colocação da string no HTML;
+                helpArray[i] = array criada pela função helpText(i);
+            */
+        }
+    </script>
+</head>
+<body>
+    <form id="myForm" action="">
+        <div>
+            Name: <input type="text" name="name" onfocus="helpText(0)" onblur="helpText(6)"/></div><br/>
+            E-mail: <input type="text" name="e-mail" onfocus="helpText(1)" onblur="helpText(6)"/><br/>
+            Any comments?<br/>
+            <textarea name="comments" cols="30" rows="10" onfocus="helpText(3)" onblur="helpText(6)"></textarea>
+        </div>
+        <div id="tip" class="tip"></div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa_switch.</title>
+    <script type="text/javascript">
+        var choice;
+        var startTag;
+        var endTag;
+        var validInput=true;
+        var listType;
+
+        choice=window.prompt("Select a list style:\n"+"1(numered),2(lettered),3(roman)","1");
+
+        switch (choice) {
+            case "1":
+                startTag="<ol>";
+                endTag="</ol>";
+                listType="<h1>Numbered List</h1>";
+                break;
+            case "2":
+                startTag="<ol style = \"list-style-type:upper-alpha\">";
+                endTag="</ol>";
+                listType="<h1>Lettered List</h1>";
+                break;
+            case "3":
+                startTag="<ol style=\"list-style-type:upper-roman\">";
+                endTag="</ol>"
+                listType="<h1>Roman Numbered List</h1>";
+                break;
+            default:
+                validInput=false;
+        }
+        if (validInput==true) {
+            document.writeln(listType+startTag);
+            for(var i=1; i<=3;i++)
+                document.writeln("<li>List item</li>");
+                document.writeln(endTag);
+        } else {
+            document.writeln("invalid choice: " + choice)
+        }
+    </script>
+</head>
+<body>
+    <a href="pag2.html">Próximo passo.</a>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .canvas{
+            width: 400px;
+            border: 1px solid lightgray;
+            border-collapse: collapse;
+        }
+        td{
+            height: 1px;
+            width: 1px;
+        }
+        th.key{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            border-bottom: 1px solid #999999;
+        }
+    </style>
+    <script type="text/javascript">
+        function createCanvas(){
+            var side = 100;// quantidade de células;
+            var tabela = document.getElementById("tabela");
+
+            for(var i=0; i<side; i++){
+                var coluna=document.createElement("tr");// i, navegando pelo eixo-y, cria elementos <tr></tr>, formando colunas; 
+
+                for(var j=0; j<side; j++){
+                    var linhas=document.createElement("td");// j, navegando pelo eixo-x, cria elementos <td></td> formando linhas;
+                    linhas.onmousemove=funcionalidadeMouse;
+                    coluna.appendChild(linhas);// cria um nó entre os elementos da seguinte forma:
+                    // coluna=i[i]=<tr></tr>;
+                    // appendChild()=criador de nó;
+                    // linhas=j[j]=<td></td>;
+                    // o método javascript funciona da seguinte forma: <tr></tr>.appendChild(<td></td>);
+                    // ele transforma a coluna em objeto e lhe alinha o parametro;
+                    // <tr>
+                    //    <td></td>
+                    //    <td></td>
+                    // </tr>
+                }
+                tabela.appendChild(coluna);// faz a mesma coisa, mas utilizando a coluna para aninhar todo o seu conteúdo com a tabela 'document.getElementById("tablebody")';
+                // tabela
+                //     <tr></tr>      
+                //     <tr></tr>
+                //     <tr></tr>
+                //     <tr></tr>
+            }
+        }
+        function funcionalidadeMouse(e){
+            if(!e) var e = window.event;
+            // aqui é indiferente a esse projeto;
+
+            if(e.ctrlKey) this.style.backgroundColor="blue";
+            // this: 'esse', especifica qual célula será pintada;
+
+            if(e.shiftKey) this.style.backgroundColor="red";
+            // igualmente;
+        }
+    </script>
+</head>
+<body onload="createCanvas()">
+    <table class="canvas">  
+        <tbody id="tabela">
+            <tr>
+                <th class="key" colspan="100">Hold <tt>Ctrl</tt> to draw blue. Hold <tt>Shift</tt> to draw red.</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

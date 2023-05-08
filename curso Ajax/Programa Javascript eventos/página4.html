@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            background-color: wheat;
+        }
+        .imagem{
+            height: 150px;
+            width: 250px;
+            background-attachment: fixed;
+        }
+        table{
+            border-style: groove;
+            text-align: center;
+            font-family: monospace;
+        }
+        td{
+            font-weight: 6em;
+        }
+    </style>
+    <script type="text/javascript">
+        imagem1=new Image();
+        imagem1.src="background001.jpg";
+
+        imagem2=new Image();
+        imagem2.src="background002.jpg";
+        // as imagem1 e imagem2 criam um método Image();
+        // imagem1.src e imagem2.src são os indereços das imagens;
+
+        function mouseOver(e){// comando para quando o mouse entrar na imagem;
+            if(!e) window.event;
+
+            var target=getTarget(e);// cria um objeto e um método correspondente de parametro 'e';
+
+            if(target.id=="heading"){// comparação entre o endereço da imagem e do espaço da imagem na página;
+                target.src=imagem2.src;// imagens trocam;
+                return;
+            }
+            if(target.id)// não há endereço definido, pois são vários;
+            target.style.color=target.id;// troca a cor da string;
+            // o style.color (invisível) se torna o que está dentro do id;
+        }
+
+        function mouseOut(e){// comando para quando o mouse sair da imagem;// o processo é praticamente o mesmo;
+            if(!e) var e=window.event;
+
+            var target=getTarget(e);
+
+            if(target.id=="heading"){
+                target.src=imagem1.src;
+                return;
+            }
+            if(target.id) target.innerHTML =target.id;// muda o texto;
+            // o texto da célula se torna o que está dentro do id;
+        }
+
+        function getTarget(e){
+            if(e.srcElement) return e.srcElement;
+            else return e.target;
+        }
+        document.onmouseover=mouseOver;// documentação da função mouseOver ao seu evento javascript;
+        document.onmouseout=mouseOut;
+    </script>
+</head>
+<body>
+    <img src="background001.jpg" id="heading" alt="Heading image" class="imagem">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, beatae repellat. Ea, nisi illum. Repudiandae reiciendis quaerat placeat laudantium, possimus tempora sequi laborum amet dolorem deleniti? Minima beatae commodi deserunt?</p>
+    <table>
+        <tr>
+            <td id="Black">#000000</td>
+            <td id="Blue">#0000FF</td>
+            <td id="Magenta">#FF00FF</td>
+            <td id="Gray">#808080</td>
+        </tr>
+        <tr>
+            <td id="Green">#008000</td>
+            <td id="Lime">#00FF00</td>
+            <td id="Marron">#800000</td>
+            <td id="Navy">#000080</td>
+        </tr>
+    </table>
+</body>
+</html>

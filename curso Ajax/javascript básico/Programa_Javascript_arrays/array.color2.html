@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        table{width: 15em;
+            border: 1px solid gray;}
+        th{text-align: left;}
+    </style>
+    <script type="text/javascript">
+        var colors= new Array("cyan","magenta","yellow","black");
+        var integers1=[1,2,4,8];
+        var integers2=[2,4,6,8];
+
+        //cada outputArray cria uma tabela diferente;
+        outputArray("Array colors contains", colors);
+        outputArray("Array integers1 contains", integers1);
+        outputArray("Array integers2 contains", integers2);
+
+    //outputArray("heading,theArray");
+    //outputArray("Array colors contains", colors);
+    //outputArray("Array integers1 contains", integers1);
+    //outputArray("Array integers2 contains", integers2);
+
+        function outputArray(heading,theArray)
+        {
+        document.writeln("<h2>"+heading+"</h2>"); 
+        document.writeln("<table>"); 
+        document.writeln("<table><th>Subscript</th>"+"<th>Value</th></thead><tbody>");
+         
+            for(var i=0; i<theArray.length; i++)
+            document.writeln("<tr><td>"+i+"</td><td>"+theArray[i]+"</td></tr>");
+                                                    //theArray[i] contém cada um quatro valores;
+                                                    //theArray[0]="cyan";
+                                                    //theArray[1]="magenta";
+                                                    //theArray[2]="yellow";
+                                                    //theArray[3]="black";
+            document.writeln("</tbody></table>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

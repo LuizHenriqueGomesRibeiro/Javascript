@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        table{text-align: right;}
+        body{font-family: aril,sans-serif;}
+        div.red{color: red}
+    </style>
+    <script type="text/javascript">
+        var WON=0;
+        var LOST=1;
+        var CONTINUE_ROLLING=2;
+
+        var firstRoll=true;
+        var sumOfDice=0;
+        var myPoint=0;
+        var gameStatus=CONTINUE_ROLLING;
+
+        function play(){
+            var point = document.getElementById("pointfield.");
+            var statusDiv = document.getElementById("status");
+            if(firstRoll){
+                sumOfDice=rollDice();
+
+                switch(sumOfDice)
+                {
+                    case 7: case 11:
+                        gameStatus=WON;
+                        point.value="";
+                        break;
+                    case 2: case 3: case 12:
+                        gameStatus=LOST;
+                        point.value="";
+                        break;
+                    default:
+                        gameStatus=CONTINUE_ROLLING;
+                        myPoint=sumOfDice;
+                        point.value=myPoint;
+                        firstRoll=false;
+                }
+            }
+            else{
+                sumOfDice=rollDice();
+
+                if(sumOfDice==myPoint) gameStatus=WON;
+                else 
+                    if(sumOfDice==7) gameStatus=LOST;
+            }
+
+            if(gameStatus==CONTINUE_ROLLING)
+            statusDiv.innerHTML="Roll again.";
+            else{
+                if(gameStatus==WON) statusDiv.innerHTML="Player wins."+"Roll the dice again.";
+                else statusDiv.innerHTML="Player lost"+"Roll the dice again.";
+
+                firstRoll=true;
+            }
+        }
+        function rollDice()
+        {
+            var dice1;
+            var dice2;
+            var workSum;
+
+            dice1=Math.floor(1+Math.random()*6);
+            dice2=Math.floor(1+Math.random()*6);
+            workSum=dice1+dice2;
+
+            document.getElementById("dice1field").value=dice1;
+            document.getElementById("dice2field").value=dice2;
+            document.getElementById("sumfield").value=workSum;
+            return workSum;
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <table>
+            <caption>craps</caption>
+            <tr>
+                <td>Dice1</td>
+                <td><input type="dice1field" type="text"/></td>
+            </tr>
+            <tr>
+                <td>Dice2</td>
+                <td><input type="dice2field" type="text"/></td>
+            </tr>
+            <tr>
+                <td>sum</td>
+                <td><input type="sumfield" type="text"/></td>
+            </tr>
+            <tr>
+                <td>point</td>
+                <td><input type="pointfield" type="text"/></td>
+            </tr>
+            <tr><td><input type="button" value="Roll Dice" onclick="play()"/></td></tr>
+        </table>
+    </form>
+</body>
+</html>

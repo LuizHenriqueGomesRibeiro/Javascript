@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var a=[1,2,3,4,5,6];
+
+        document.writeln("<h2>Effects of passing entire array by reference</h2>");// mudar os elemento da array;
+        
+        outputArray("A array original é:",a);// array original;
+
+        modifyArray(a);// modificação da array atráves da equação;
+
+        outputArray("Modified array:",a);// array alterada;
+
+        document.writeln("<h2>Effects of passing array element by value</h2>");
+        document.writeln("a[3] before modifyElement:"+a[3]);
+
+        modifyElement(a[3]);// elemento expecífico da array alterada;
+
+        document.writeln("<br/>a[3] after modifyElement: "+a[3]);
+
+        function outputArray(heading,theArray){
+            document.writeln(heading+theArray.join(", ")+"<br/>")// join( ) pode criar elementos entre as theArrays;
+        }
+
+        function modifyArray(theArray){
+            for(var j in theArray) theArray[j] *= 2;// mais uma vez, o for_in;
+        }
+
+        function modifyElement(e){
+            e*=2;// corpo da função;
+            document.writeln("<br/>Value in modifyElement: "+e);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

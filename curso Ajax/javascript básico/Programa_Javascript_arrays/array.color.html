@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+       table{width: 10em;
+         border: 1px solid gray;}
+       th{text-align: left;}
+    </style>
+    <script type="text/javascript">
+       var n1 = new Array(5);// inicialização de uma array com cinco variáveis;
+       var n2 = new Array();// array vazia;
+
+      for(var i=0; i<n1.length;++i)
+      n1[i]=i;
+
+      for(i=0; i<5; ++i)
+      n2[i]=i;
+
+      outputArray("Array n1:",n1);// cria a primeira tabela;                                                                                              
+      outputArray("Array n2:",n2);// cria a segunda tabela;
+
+      function outputArray(heading,theArray) 
+      {
+        document.writeln("<h2>"+heading+"</h2>"); 
+        document.writeln("<table>"); 
+        document.writeln("<table><th>Subscript</th>"+"<th>Value</th></thead><tbody>");
+         
+            for(var i=0; i<theArray.length; i++)// cria uma tabela do tamanho da array;
+            document.writeln("<tr><td>"+i+"</td><td>"+theArray[i]+"</td></tr>");// contéudo da tabela;// 'i' do lado esquerdo e 'theArray[i]' do lado direito;
+
+            document.writeln("</tbody></table>");
+      }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        
+    </style>
+    <script type="text/javascript">
+        var frequencia1=0,frequencia2=0,frequencia3=0,frequencia4=0,frequencia5=0, frequencia6=0;
+        var dado;
+
+        for(var i=1; i<=6000; i++){
+            dado=Math.floor(1+Math.random()*6);
+            switch (dado) {
+                case 1:
+                    ++frequencia1;
+                    break;
+                case 2:
+                    ++frequencia2;
+                    break;
+                case 3:
+                    ++frequencia3;
+                    break;
+                case 4:
+                    ++frequencia4;
+                    break;
+                case 5:
+                    ++frequencia5;
+                    break;
+                case 6:
+                    ++frequencia6;
+                    break;
+            }
+        }
+
+        document.writeln("<table>");
+        document.writeln("<thead><th>Dado</th></thead>"+"<thead><th>Frequencia</th></thead>");
+        document.writeln("<tbody><tr><td>1</td><td>"+frequencia1+"</td></tr>");
+        document.writeln("<tr><td>2</td><td>"+frequencia2+"</td></tr>");
+        document.writeln("<tr><td>3</td><td>"+frequencia3+"</td></tr>");
+        document.writeln("<tr><td>3</td><td>"+frequencia4+"</td></tr>");
+        document.writeln("<tr><td>3</td><td>"+frequencia5+"</td></tr>");
+        document.writeln("<tr><td>3</td><td>"+frequencia6+"</td></tr></tbody");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função geração de números.</title>
+    <style type="text/css">
+        table{
+            width: 50%;
+            border: 1px solid gray;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        var value;
+
+        document.writeln("<table>");
+        document.writeln("<p>Este programa calcula números aleatórios.</p>");
+
+        for (var i=1; i<=20; i++)// quantidade de valores requeridos;
+        {
+            value=Math.floor(1+Math.random()*6);// randomizador de valores;
+            //value: valor gerado;
+            //Math.floor: arredonda o número alcançado para baixo;
+            //Math.random()*6: randomiza valores de 0 a 5;
+            //1+Math.random()*6: ajusta a randomização para valores de 1 a 6;
+            document.writeln("<td>"+value+"</td>");
+
+            if(i%5==0 && i != 20) document.writeln("<tr></tr>");//<tr></tr> pulam uma linha;
+        }
+        document.writeln("</table>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

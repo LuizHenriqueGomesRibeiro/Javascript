@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var input1 = window.prompt("Enter the first value.");
+        var input2 = window.prompt("Enter the second value.");
+        var input3 = window.prompt("Enter the third value.");
+
+        var value1 = parseFloat(input1);
+        var value2 = parseFloat(input2);
+        var value3 = parseFloat(input3);
+        var maxValue = maximum(value1,value2,value3);
+
+        document.writeln("<p>The first value is: "+value1+"</p>");
+        document.writeln("<p>The second value is: "+value2+"</p>");
+        document.writeln("<p>The third value is: "+value3+"</p>");
+        document.writeln("<p>The max value is: "+maxValue+"</p>");
+            
+        function maximum(value1,value2,value3) {
+            return Math.max(value1,Math.max(value2,value3));            
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

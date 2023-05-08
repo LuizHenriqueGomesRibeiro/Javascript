@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var array = [[2,34,5],[4,3,7],[24,65,54]];
+        var total=0;
+        outputArray("O total que representa a array é ",array);
+
+        function outputArray(heading,theArray){
+            document.writeln("<h1>"+heading+"</h1><pre>");
+            for(var i in theArray)// {(com conchete...)
+                for(var j in theArray[i]) total+=theArray[i][j];
+                document.write("<p>"+total+"</p>");
+                // }(haverá três valores ao invés de um só, representantes de theArray[0][j], theArray[1][j] e theArray[2][j];);
+            document.writeln("</pre>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

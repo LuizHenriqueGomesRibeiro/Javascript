@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var letters="abcdefghijklmnopqrstuvwxyabcdefghijklmnopqrs";
+
+        function buttonPressed(){
+            var searchForm=document.getElementById("searchForm");
+            var inputVal=document.getElementById("inputVal");
+
+            searchForm.element[2].value=letters.indexOf(inputVal.value);
+            searchForm.element[3].value=letters.lastIndexOf(inputVal.value);
+            searchForm.element[4].value=letters.indexOf(inputVal.value,12);
+            searchForm.element[5].value=letters.lastIndexOf(inputVal.value,12);
+        }
+    </script>
+</head>
+<body>
+    <form id="searchForm" action="">
+        <h1>A string para procurar é:<br/>
+            ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHI
+        </h1>
+        <p>Entre com a substring para procurar por 
+            <input id="inputVal" type="text"/>
+            <input id="search" type="button" value="Search" onclick="buttonPressed()"/>
+        </p>
+
+        <p>A primeira ocorrência localizada do index é
+            <input id="first" type="text" size="5"/>
+        </p>
+        <p>A última ocorrêcia localizada do index é
+            <input id="last" type="text" size="5"/>
+        </p>
+        <p>A primeira ocorrência do index 12 está localizada no index
+            <input id="first12" type="text" size="5"/>
+        </p>
+        <p>A última ocorrêcia do index 12 está localizada no index
+            <input id="last12" type="text" size="5"/>
+        </p>
+    </form>
+</body>
+</html>

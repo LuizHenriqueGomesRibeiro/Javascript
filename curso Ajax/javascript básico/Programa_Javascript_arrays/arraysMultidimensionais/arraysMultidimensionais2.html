@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var array1=[[1,2,3],[2,5,8]];
+        var array2=[[1,4],[6,7,3,2],[2]];
+
+        outputArray("Os valores em array1 para rolar são", array1);
+        outputArray("Os valores em array2 para rolar são", array2);
+
+        function outputArray(heading,theArray){
+            document.writeln("<h1>"+heading+"</h1><pre>");
+            for(var i in theArray){
+                for(var j in theArray[i]) document.write(theArray[i][j]+"");
+                document.writeln("<br/>");
+            }
+            document.writeln("</pre>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

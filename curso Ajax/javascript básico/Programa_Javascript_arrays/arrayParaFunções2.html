@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var a=[1,2,3,4,5,6,7,8,9,10];
+
+
+        document.writeln("<h1>O efeito for passar toda a array pela referência:</h1>");
+
+        outputArray("A array original é: ",a);
+        function outputArray(heading,theArray){
+            document.writeln(heading,theArray.join(", ")+"</br>");
+        }
+
+        modifyArray("A array mudada é: ",a);
+        function modifyArray(heading,theArray){
+            for(var i in a) theArray[i]*=2;
+            document.writeln(heading,theArray.join(", "));
+        }
+
+
+        document.writeln("<h1>Os elementos expecíficos da array modificados são:</h1>");
+
+        document.writeln("O elemento a[3] antes de ser alterado: ",a[3],"</br>");
+
+        identidyElement("O elemento a[3] alterado é ",a[3]);
+        function identidyElement(heading,theElement){
+            theElement*=2;
+            document.writeln(heading,theElement);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

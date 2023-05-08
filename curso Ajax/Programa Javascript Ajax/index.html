@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch contendo assíncrono</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" linguage="JavaScript">
+        var asyncRequest;
+
+        // função que armazena o objeto XMLHttpRequest;
+        function getContent(url){
+            // tenta criar o XMLHttpRequest e faz a solicitação;
+            try{
+                asyncRequest=new XMLHttpRequest();// criação do objeto partindo do método XMLHttpRequest();
+        
+                asyncRequest.onreadystatechange=stateChange;
+                // onreadystatechange = armazena a função callback, sendo chamado quando o servidor responde;
+                asyncRequest.open('GET',url,true);// prepara a solicitação do XMLHttpRequest();
+                asyncRequest.send(null);// envia a solicitação do XMLHttpRequest();
+            }
+            catch(exception){
+                alert("Requisição falhou.");
+            }
+        }
+
+        // função chamada quando o cliente recebe os dados de resposta;
+        function stateChange(){
+            if(asyncRequest.readyState==4 && asyncRequest.status==200){
+                // readyState = progresso da solicitação de 1 a 4. 1 é solicitação iniciada e 4, concluída;
+                // status = status web da requisição. '200' a requisição foi um sucesso. '404', falhou;
+                document.getElementById('contentArea').innerHTML=asyncRequest.responseText;// adiciona o texto HTML em 'contentArea';
+            }
+        }
+        function clearContent(){
+            document.getElementById('contentArea').innerHTML="";// obviamente, limpa o conteúdo da 'contentArea';
+        }
+    </script>
+</head>
+<body>
+    <h1>Mova o mouse sobre o conteúdo para mais informações.</h1>
+    <img src="http://test.deitel.com/examples/iw3htp4/ajax/thumbs/cpphtp6.jpg" onmouseover='getContent("texto.xml")'
+    onmouseout='clearContent()'/>
+    <div class="box" id="contentArea">&nsp;</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var soma;
+        var quantidade;
+        var suaNota;
+        var suaNotaInteiro;
+        var media;
+
+        soma=0;
+        quantidade=1;
+
+        while(quantidade<=3)
+        {
+            suaNota=window.prompt("Coloque a sua nota.");
+            suaNotaInteiro=parseInt(suaNota);
+            soma=soma+suaNotaInteiro;
+            quantidade=quantidade+1;
+        }
+            media = soma / 3;
+
+            document.writeln("<h1>A média dos dez alunos é " + media + "</h1>");
+    </script>
+</head>
+<body>
+    <p><a href="while if.html">Próximo passo.</a></p>
+</body>
+</html>

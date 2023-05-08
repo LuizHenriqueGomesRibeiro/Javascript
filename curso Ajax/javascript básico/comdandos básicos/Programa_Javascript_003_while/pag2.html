@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var total;//soma das notas;
+        var gradeCounter;//número de notas digitadas;
+        var grade;//nota digitada(string);
+        var gradeValue;//nota digitada(variável);
+        var average;//média de todas as notas;
+
+        total = 0;//iniciar soma;
+        gradeCounter = 0;//iniciar contador de notas;
+
+        grade = window.prompt("Digite as notas e pressione -1 para ver a média.");
+        gradeValue=parseInt(grade);//transforma string em variável;
+
+        while (gradeValue != -1){//enquanto a chave não é ativada, o loop continua;
+            total=total+gradeValue;//guarda o valor das notas;
+            gradeCounter=gradeCounter+1;//guarda a quantidade de notas;
+            grade = window.prompt("Digite as notas e pressione -1 para ver a média.");
+            gradeValue=parseInt(grade);}
+            if (gradeCounter != 0){//quando o número de notas não for zero:;
+                average=total/gradeCounter;
+                document.writeln(average);
+                } 
+                else{
+                    document.writeln("Sem notas.");//se for zero;
+                    }
+    </script>
+</head>
+<body>
+    <a href="pag3.html">Próximo passo.</a>
+</body>
+</html>

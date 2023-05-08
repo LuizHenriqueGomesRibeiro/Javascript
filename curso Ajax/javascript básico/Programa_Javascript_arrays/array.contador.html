@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        table{width: 15em;}
+        th{text-align: left;}
+    </style>
+    <script type="text/javascript">
+        var resultado;
+        var frequência=[,0,0,0,0,0,0];// não há valor para frequência[0];
+        var rolar;
+
+        for(var rolar=1; rolar<=6000; ++rolar){// quantidade necessária de roladas;
+            resultado=Math.floor(1+Math.random()*6);// randomizador de números;
+            ++frequência[resultado];// contabilização dos números;
+        }
+        document.writeln("<table border><thead><th>Resultado</th>");
+        document.writeln("<th>Frequência</th></thead><tbody>");
+
+            for(resultado=1; resultado<frequência.length; ++resultado) document.writeln("<tr><td>"+resultado+"</td><td>"+frequência[resultado]+"</td></tr>");
+            document.writeln("</tbody></table>")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

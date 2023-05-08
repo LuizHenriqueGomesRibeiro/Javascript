@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body div#area{
+            background: #6565c5;
+            color: white;
+            width: 400px;
+            height: 400px;
+            text-align: center;
+            line-height: 400px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onmouseenter="entrar()" onmouseout="sair()" onmousedown="pressionar()" onmouseup="mantém()">
+    <p>interaja</p>
+    </div>
+    <script type="text/javascript">
+    var a = document.getElementById("area");
+       function entrar(){
+            a.innerHTML="Entrou!"
+       }
+       function sair(){
+            a.innerHTML="Saiu!"
+            a.style.background="#6565c5";
+       }
+       function pressionar(){
+            a.innerHTML="Pressionou!"
+            a.style.background="red";
+       }
+       function mantém(){
+            a.innerHTML="mantém!"
+            a.style.background="#6565c5";
+       }
+       function umaita(){
+            a.innerHTML="umaita!"
+            a.style.background="#6565c5";
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;}
+        h1{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        p{
+            margin: 5%;
+        }
+        p a{
+            color: #aa0000;
+        }
+        .links{
+            font-family: 14px;
+            text-align: justify;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .link a{
+            text-decoration: none;
+        }
+        .link a:hover{
+            text-decoration: underline;
+        }
+    </style>
+    <script type="text/javascript">
+        var linkslist=document.links;
+        var contents="Links in this page:\n<br/>|";
+
+        for(var i=0; i<linkslist.length; i++){
+            var currentLink=linksList[i];
+            contents+="<span class='link'>"+currentLink.innerHTML.link(currentLink.href)
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

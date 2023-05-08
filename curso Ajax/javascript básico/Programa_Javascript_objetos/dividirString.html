@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function splitButtonPressed(){
+            var inputString=document.getElementById("inputVal").value;// introdução da string por digitação;
+            var tokens=inputString.split(" ");// split(" ") é a string deliminadora. Ou seja, espaço " " separa uma string da outra;
+            //value; permite a transmissão de informações entre o HTML e o Javascript;
+    
+            document.getElementById("output").value=tokens.join("\n");// o método getElementById é o endereço para ser utilizado pelo <body></body>;
+            // tokens.join("\n");
+            // tokens = palavra (definida pelo método split);// join("\n") = método utilizado entre as palavras (tokens) para definir alguma ação;
+            
+            document.getElementById("outputSubstring").value=inputString.substring(0,10);// cria uma substring entre os valores de index=0 e index=10 (onze valores);
+            }
+    </script>
+</head>
+<body>
+    <form action="">
+        <p>Enter a sentence to split into words<br/>
+            <input id="inputVal" type="text" size="40"/>
+            <input type="button" value="Split" onclick="splitButtonPressed()"/>
+        </p>
+        <p>The sentence split int words is<br/>
+            <textarea id="output" cols="34" rows="8"></textarea>
+        </p>
+        <p>The first 10 caracters of the input string are
+            <input id="outputSubstring" type="text" size="15"/>
+        </p>
+    </form>
+</body>
+</html>

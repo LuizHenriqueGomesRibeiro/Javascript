@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha vez.</title>
+    <script type="text/javascript">
+        var choice;
+        var startTag;
+        var endTag;
+        var validInput=true;
+        var listType;
+
+        choice=window.prompt("Keep the number forhead your choice\n","1(numered),2(lettered) and 3(roman)");
+
+        switch (choice){
+            case "1":
+                startTag="<ol>";
+                endTag="</ol>";
+                listType="numered";
+                break;
+            case "2":
+                startTag="<ol>";
+                endTag="</ol>";
+                listType="lettered";
+                break;
+            case "3":
+                startTag="<ol>";
+                endTag="</ol>";
+                listType="roman";
+                break;
+            default:
+                validInput=false;
+        }
+        if (validInput==true) {
+            document.writeln(listType+startTag)
+            for(var i=1; i <= 3; i++)
+                document.writeln("<li>List item</li>");
+                document.writeln(endTag);
+        } else {
+            document.writeln("Argument non found.")
+        }
+    </script>
+</head>
+<body>
+    <p><a href="pag3.html">mais uma vez.</a></p>
+</body>
+</html>

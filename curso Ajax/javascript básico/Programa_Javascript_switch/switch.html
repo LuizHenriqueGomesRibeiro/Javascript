@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var escolha;
+        var iniciarTag;
+        var finalizarTag;
+        var input=true;
+        var lista;
+
+        escolha=window.prompt("Escolha: 1(numerado), 2(letrado) ou 3(romanico);");
+
+        switch (escolha) {
+            case "1":
+                iniciarTag="<ol>";
+                finalizarTag="</ol>";
+                lista="<h1>Lista numerada</h1>";
+                break;
+            case "2":
+                iniciarTag="<ol>";
+                finalizarTag="</ol>";
+                lista="<h1>Lista letrada</h1>";
+                break;
+            case "3":
+                iniciarTag="<ol>";
+                finalizarTag="</ol>";
+                lista="<h1>Lista romanica</h1>";
+                break;
+            default: input=false;
+        }
+        if (input=true) {
+            document.writeln(lista + iniciarTag);
+            for(var i=1; i<=3; ++i) document.writeln("<li>Listar item "+i+" </li>");
+            document.writeln(finalizarTag);
+        }else document.writeln("Escolha inválida: " + escolha);
+    </script>
+</head>
+<body>
+    <p><a href="switch2.html">Próximo passo.</a></p>
+</body>
+</html>
